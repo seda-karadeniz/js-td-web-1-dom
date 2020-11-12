@@ -23,7 +23,12 @@ EXERCICE 1 :
 3. Vider la liste de tout son contenu et la réafficher
 */
 
-
+console.log(document.getElementById("langages"));
+const myList = document.getElementById("langages");
+myList.innerHTML = "<li> python </li> ";
+/* ecrase le reste de la list, met pas les autres */
+myList.innerHTML = myList.innerHTML + "<li> python </li> ";
+/* myList.innerHTML += "<li> python </li> " */
 
 
 
@@ -36,6 +41,7 @@ EXERCICE 2 :
 Compléter le titre du document pour qu'il devienne
 "Quelques langages de programmation" et le réafficher
 */
+document.querySelector("h1").textContent += "de programmation";
 
 
 
@@ -55,6 +61,7 @@ EXERCICE 3 :
 */
 
 
+document.querySelector("h1").setAttribute("id","pomme");
 
 
 // 4. Les classes
@@ -65,6 +72,15 @@ EXERCICE 3 :
 	* si la classe existe, toggle() la supprime et retourne false, 
 	* si la classe n'existe pas, toggle() l'ajoute et retourne true. 
 */
+
+document.querySelector("h1").classList.remove("debut");
+document.querySelector("h1").classList.add("debut");
+console.log("lélemetn h1 contient debut " +document.querySelector("h1").classList.contains("debut")
+);
+
+document.querySelector("h1").insertAdjacentHTML('beforebegin', "<p>je suis au debut de la balise </p>");
+
+
 /*
 EXERCICE 4 : 
 - Accéder au premier titre h1 et le stocker dans la variable titreElt
@@ -85,6 +101,7 @@ EXERCICE 5 :
 - Retester le script
 */
 
+document.querySelector("li").classList.toggle("hide");
 
 
 
@@ -120,9 +137,12 @@ Ajouter le langage "ruby" à la liste des langages :
 - 3. L'ajouter dans l'ul d'id "langages"
 - 4. Afficher le contenu HTML de l'ul
 */
-
-
-
+/* cloner la dernier ligne (php) */
+const myLangages = document.querySelector("#langages");
+const myNewLi = document.querySelector("#php").cloneNode(true);
+myLangages.appendChild(myNewLi);
+/*changer le nom du clone (deuxieme php cree au dessus) mettre le nom python */
+myNewLi.textContent = "python";
 
 // 2. Variantes pour ajouter un élément
 

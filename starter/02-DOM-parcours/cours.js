@@ -33,7 +33,10 @@ en utilisant la méthode getElementsByTagName()
 - Sélectionner et afficher (à l'aide d'une boucle)
 l'ensemble des éléments du document ayant pour classe "merveilles"
 */
-
+const myLis = document.getElementsByClassName("merveilles");
+for(let i = 0; i < myLis.length; i++){
+	console.log(myLis[i]);
+}
 
 
 
@@ -75,6 +78,11 @@ Elle renvoie la liste des éléments correspondant au sélecteur passé en param
 - Tous les éléments ayant la classe "existe" (à l'aide d'une boucle)
 - Le nombre d'enfants de l'élément d'id "antiques" ayant la classe "existe"
 */
+console.log(document.querySelectorAll("p").length);
+/* pr donner le premier p */
+console.log(document.querySelectorAll("p")[0]);
+
+
 
 // Nombre de paragraphes
 
@@ -84,8 +92,13 @@ Elle renvoie la liste des éléments correspondant au sélecteur passé en param
 
 // Nombre de paragraphes à l'intérieur de l'élément d'id "contenu"
 
+console.log(document.querySelectorAll("#contenu p").length);
 
 // Le 2e paragraphe à l'intérieur de l'élément d'id "contenu"
+console.log(document.querySelectorAll("#contenu p")[1]);
+/* ou */
+console.log(document.querySelector("#contenu p:nth-child(2)"));
+
 
 
 // Nombre d'éléments ayant la classe "existe"
@@ -163,16 +176,28 @@ La propriété textContent renvoie tout le contenu textuel d'un élément du DOM
 - Vérifier, grâce à la méthode hasAttribute(), la présence de l'attribut target sur le premier lien du document 
 */
 // Affiche l'attribut href du premier lien
+console.log(document.querySelector("a").href);
+/* utiliser plutot getattribute */
+console.log(document.querySelector("a").getAttribute(href));
 
 
 // Affiche l'identifiant de la première liste
-
+console.log(document.querySelector("ul").id);
 
 // Affiche l'attribut href du premier lien
 
 
 // Vérifie la présence de l'attribut target sur le premier lien
-
+console.log(document.querySelector("a").getAttribute("target"));
+/* autre version */
+const hasTarget = document.querySelector("a").getAttribute("target")
+if(hasTarget === null){
+	console.log("pas d'attribut t'arget");
+}
+else{
+	console.log("il ya un attribut target");
+}
+/* autre maniere avec la methode hasAttribute */
 
 
 // 4. Les classes
@@ -191,6 +216,12 @@ La propriété textContent renvoie tout le contenu textuel d'un élément du DOM
 
 // Liste des classes de l'élément identifié par "antiques"
 
+console.log(document.getElementById("antiques").className);/* renvoi la chaine de caractere avc merveille dedans */
+console.log(document.getElementById("antiques").classList);
+console.log(document.getElementById("antiques").className.length);
+
+
+/* classlist */
 
 // Affiche le nombre de classes que possède l'élément d'id "antiques"
 
@@ -200,3 +231,4 @@ La propriété textContent renvoie tout le contenu textuel d'un élément du DOM
 
 // Teste si l'élément d'id "antiques" possède la classe "merveille"
 
+document.querySelector("#antique").classList/* renvoi un tableau qui contient la liste des elemtn */.contains(".merveilles"); /* regrde si il contien la classe merveille */

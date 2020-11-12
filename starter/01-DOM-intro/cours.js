@@ -15,6 +15,8 @@ EXERCICE 1 : Afficher dans la console
 - l'objet body du DOM (représentant l'élément <body>) 
 - le titre du document
 */
+const head = document.head;
+console.log(head);
 
 
 
@@ -37,6 +39,19 @@ Afficher la valeur de la propriété nodeType du body dans la console
 https://developer.mozilla.org/fr/docs/Web/API/Node/nodeType)
 */
 
+/* avec body  */
+const body = document.body.nodeType;
+console.log(body);
+/* node type permet de savoir si cest un objet de type element ou pas */
+/* node = objet */
+console.log(Node);
+if(body === Node.ELEMENT_NODE /* 1 */ ){
+    /* Node.ELEMENT_NODE remplace 1 car plutard oublier ce que vaut 1 */
+    console.log("objet de type element");
+}
+else{
+    console.log("n'est pas un objet de type element");
+}
 
 
 
@@ -55,6 +70,15 @@ Accéder aux enfants d'un nœud. Afficher :
 - le 2e enfant du noeud body ;
 - tous les nœuds enfants du noeud body à l'aide d'une boucle ;
 */
+const enfant = document.body.childNodes;
+console.log(enfant);
+
+for(let i = 0; i < enfant.length; i++){
+    if(enfant[i].nodeType === Node.ELEMENT_NODE){
+        console.log(`l'élement ${i} = ${enfant[i]}`);
+    }
+}
+
 
 // Affiche le premier enfant du noeud body
 
@@ -78,8 +102,49 @@ Accéder au parent d'un nœud. Afficher
 - le parent du noeud document ;
 */
 
+const test = document.body.childNodes[1];
+console.log(`ceci est le h1 ${test}`);
+console.log(`ceci est le parent du h1 ${test.parentNode}`);
+
+
 // Affiche le parent du noeud h1
 
 
 
 // Accès au parent du noeud document ?
+
+/* quelque ex */
+
+const premierLi = document.querySelectorAll('li');
+const nouveauLi = premierLi.cloneNode(true);
+console.log(`mon permier li que je veux cloner  ${premierLi}`);
+/* ne px pas etre dupliquer car cest un tableau */
+const premierLi = document.querySelectorAll('li')[0];/* pr selectionner le premier */
+const nouveauLi = premierLi.cloneNode(true);
+console.log(`mon permier li que je veux cloner  ${premierLi}`);
+/* pas besoinde fr tt ca  */
+
+const premierLi = document.querySelector('li');
+const clonePremierLi = premierLi.cloneNode(true);
+console.log(`mon permier li que je veux cloner  ${premierLi}`);
+console.log(`mon permier li que je veux cloner  ${clonePremierLi}`);
+
+const myNewP = document.createElement('p');
+const myTextNode = document.createElement('bonjour tout le monde');
+
+console.log(myNewp);
+console.log(myNewp);
+/* probleme avc ces methode, ne saficche pas */
+
+/* si on ajoute dans html une ul #app avec 3 li ex */
+const myList = document.querySelector("#app");/* SELECTIONNE L UL */
+//const liToRemove = myList.querySelector('li');/* selectionne le li */
+
+console.log(myList);
+//myList.removeChild(liToRemove);
+/* retire le li */
+
+/* ajouter */
+const li = myList.querySelector('li');/* selectionne le li */
+const liCloned = li.cloneNode(true);
+/* pas terminer */
