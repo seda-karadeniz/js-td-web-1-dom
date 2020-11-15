@@ -29,7 +29,9 @@ myList.innerHTML = "<li> python </li> ";
 /* ecrase le reste de la list, met pas les autres */
 myList.innerHTML = myList.innerHTML + "<li> python </li> ";
 /* myList.innerHTML += "<li> python </li> " */
-
+console.log(document.querySelector("#langages"));
+const myList = document.querySelector("#langages");
+myList.innerHTML = myList.innerHTML + "<li> python </li> ";
 
 
 // 2. Le contenu textuel

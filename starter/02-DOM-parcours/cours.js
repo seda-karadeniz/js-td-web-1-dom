@@ -103,6 +103,7 @@ console.log(document.querySelector("#contenu p:nth-child(2)"));
 
 // Nombre d'éléments ayant la classe "existe"
 
+console.log(document.querySelectorAll(".existe").length);
 
 // Tous les éléments ayant la classe "existe"
 
@@ -199,7 +200,7 @@ else{
 }
 /* autre maniere avec la methode hasAttribute */
 
-
+ document.querySelector("a").hasAttribute("target");
 // 4. Les classes
 /*
 - La propriéte classList (https://developer.mozilla.org/fr/docs/Web/API/Element/classList)
