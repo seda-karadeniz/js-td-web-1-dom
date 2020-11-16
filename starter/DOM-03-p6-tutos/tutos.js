@@ -14,3 +14,48 @@ Vous disposez d’un fichier HTML qui contient une nav.
 		avec le texte qui précède le lien dans l’énoncé ci-dessus)
 AIDE : Utilisez une boucle for/in pour parcourir l'objet tutos
 */
+/* 
+
+
+const tutos={
+	
+		titre : "Mes tutos JavaScript",
+		libelle : ["Apprenez à coder avec JavaScript", "Créez des pages web interactives avec JavaScript","Build Real Projects! sur UDEMY" ],
+		lien : ["https://openclassrooms.com/fr/courses/2984401-apprenez-a-coder-avec-javascript","https://openclassrooms.com/fr/courses/3306901-creez-des-pages-web-interactives-avec-javascript/","https://www.udemy.com/course/the-complete-javascript-course/"]
+}
+
+
+for (const tuto in tutos) {
+  console.log(`${tuto}: ${tutos[tuto]}`);
+} */
+
+/* document.querySelector("nav").insertAdjacentHTML("beforeend",tutos); */
+
+
+const tutos = [
+	{
+		titre : "Mes tutos JavaScript",	
+	},
+    {
+        libelle : "Apprenez à coder avec JavaScript",
+        lien: "https://openclassrooms.com/fr/courses/2984401-apprenez-a-coder-avec-javascript"
+    },
+    {
+        libelle: "Créez des pages web interactives avec JavaScript",
+        lien:"https://openclassrooms.com/fr/courses/3306901-creez-des-pages-web-interactives-avec-javascript/"
+    },
+    {
+        libelle:"Build Real Projects! sur UDEMY" ,
+        lien:"https://www.udemy.com/course/the-complete-javascript-course/"
+    }
+];
+for (const tuto in tutos) {
+	console.log(document.querySelector("nav").insertAdjacentHTML("beforeend",tutos[tuto]));
+  }
+
+
+
+
+
+
+ 
