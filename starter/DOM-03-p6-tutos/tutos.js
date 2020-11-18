@@ -14,8 +14,51 @@ Vous disposez d’un fichier HTML qui contient une nav.
 		avec le texte qui précède le lien dans l’énoncé ci-dessus)
 AIDE : Utilisez une boucle for/in pour parcourir l'objet tutos
 */
-/* 
+class Tutos {
+	constructor(libelle,lien){
+		this.titre = "Mes tutos JavaScript";
+		this.libelle = libelle;
+		this.lien = lien;
+	}
+	decrire(){
+		return 	`${this.titre} ${this.libelle} ${this.lien}`;
+	}
+}
 
+const ocr1 = new Tutos("Apprenez à coder avec JavaScript", "https://openclassrooms.com/fr/courses/2984401-apprenez-a-coder-avec-javascript");
+const ocr2 = new Tutos("Créez des pages web interactives avec JavaScript","https://openclassrooms.com/fr/courses/3306901-creez-des-pages-web-interactives-avec-javascript/")
+const udemy = new Tutos("Build Real Projects! sur UDEMY", "https://www.udemy.com/course/the-complete-javascript-course/");
+
+console.log(`${ocr1.decrire()}\n${ocr2.decrire()}\n${udemy.decrire()}`);
+
+document.querySelector("nav").insertAdjacentHTML("beforeend",ocr1.decrire());
+document.querySelector("nav").insertAdjacentHTML("beforeend",ocr2.decrire());
+document.querySelector("nav").insertAdjacentHTML("beforeend",udemy.decrire());
+
+
+
+/*   const compte = new CompteBancaire("Seda");
+  const compteV = new CompteBancaire("valentine");
+  
+  console.log(compte, compteV);
+  
+  compteV.crediter(500); /* appel de mehtode en appl de l'objet */
+
+  /* console.log(compteV.toString());
+  
+  compte.debiter(500);
+  console.log(compte.toString());  */
+  /* 
+  en resumer 
+  les class servent a cree des objet qui on les mm proprieter mais pas les mm valeur
+  this = mot clé qui designe l'objet courant dans lequel on est 
+  new = permet de dire qu'il aimerai avoir un objet de la classe compte bancaire 
+  
+  */
+
+
+
+/* 
 
 const tutos={
 	
@@ -31,7 +74,7 @@ for (const tuto in tutos) {
 
 /* document.querySelector("nav").insertAdjacentHTML("beforeend",tutos); */
 
-
+/* 
 const tutos = [
 	{
 		titre : "Mes tutos JavaScript",	
@@ -53,7 +96,7 @@ for (const tuto in tutos) {
 	console.log(document.querySelector("nav").insertAdjacentHTML("beforeend",tutos[tuto]));
   }
 
-
+ */
 
 
 
