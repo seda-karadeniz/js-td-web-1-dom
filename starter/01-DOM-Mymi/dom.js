@@ -6,11 +6,11 @@ http://icant.co.uk/articles/domessentials/
 */
 
 /* 1. Cibler l'élement d'id nav */
-
+document.querySelector('#nav');
 
 /* 2. Récupérer tous les li */
 
-
+document.querySelectorAll('li')
 /* 3. Cibler le 4e li */
 
 
