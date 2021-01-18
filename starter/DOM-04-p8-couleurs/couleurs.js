@@ -21,16 +21,33 @@ console.log(lesTitres.style.color);
  document.querySelectorAll("h1") ne fonctionnera pas sans une boucle car renvoi plusieur element
  document.querySelectorAll("h1")[0] fonctionne car dans le tableau selectionne un seul element*/
 
+
+
+
+
+
+
+
+
+
+
+
+
 const colorTitle = prompt("Entrez la couleur de texte que vous souhaitez appliquer aux titres (utilisez soit le nom anglais de la couleur, soit le format hexadécimal, soit le format RGB)");
 const backgroundcolor = prompt("entrez une couleur de fond");
 const fontsize = prompt("entrez une taille ");
 
-const titles = document.querySelectorAll("h1");
-
+const t_titles = document.querySelectorAll("h1");
+for ( const e_title of t_titles) {
+    e_title.style.color = colorTitle;
+    e_title.style.backgroundColor = backgroundcolor;
+    e_title.style.fontSize = fontsize + "em";
+}
+/*
 for (let i = 0; i < titles.length; i++) {
     titles[i].style.color = colorTitle;
     titles[i].style.backgroundColor = backgroundcolor;
     titles[i].style.fontSize = fontsize + "em";
-} 
+} */
 
 
